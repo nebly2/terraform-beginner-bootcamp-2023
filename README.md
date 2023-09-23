@@ -188,12 +188,18 @@ This will generate a changeset, about the state of our infrastructure and what w
 
 We can output this changeset ie. "plan" to be passed to an apply, but often you can just ignore outputting.
 
-#### Terraform Ally
+#### Terraform Apply
 
 `terraform apply`
 
 This will run the plan and pass the changeset to be excuted by terraform. Apply should prompt yes or no.
 
+If you want to auto approve, you can provide an auto approve flag eg. `terraform apply --auto-approve`
+
+#### Terraform Destroy
+
+`terraform destroy`
+This will destory resources. You also use auto approve flags such as `terraform destroy --auto-approve`
 
 ## Terraform Lock Files
 
