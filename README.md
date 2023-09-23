@@ -135,9 +135,36 @@ We can print an env var using echo eg. 'echo $HELLO'
  ```
 
  All future workspaces launced will set the env vars for all bash terminals opened in all worspaces.
-https://developer.hashicorp.com/terraform/tutorials/aws-ge
 
-t-started/install-cli
+ ### AWS CLI Installation 
+
+ AWS CLI is installed for the project via the bash script [`./bin/install_aws_cli`](./bin/install_aws_cli)
+
+ [Getting started Install (AWS CLI)](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
+ [AWS CLI Env Vars](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
+
+We can check if our AWS credentials is configured correctly by running the following AWS command
+```sh
+aws sts get-caller-identity
+```
+
+If it is successful you should see a json payload return that looks like this:
+```json
+{
+    "UserId": "AIDARLQTDTPAQTJ56Q2NW",
+    "Account": "093457834057",
+    "Arn": "arn:aws:iam::093457834057:user/terraform-beginner-bootcamp"
+}
+```
+
+## Need to generate AWS CLI credential from IAM user in order to utilize the AWS CLI
+
+-Create AWS root user account
+-Through root account, you can create an IAM user with admin credentials
+-Through the IAM admin account, you can create AWL CLI access keys through IAM console
+
+https://developer.hashicorp.com/terraform/tutorials/aws-get-started/install-cli
 https://en.wikipedia.org/wiki/Shebang_(Unix)
 https://en.wikipedia.org/wiki/Chmod
 https://www.gitpod.io/docs/configure/workspaces/workspace-lifecycle
