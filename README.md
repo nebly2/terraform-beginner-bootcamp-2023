@@ -253,3 +253,5 @@ Provide the following code ("replace with token in file")
     }
 }
 ```
+
+Automated the process by created a bash script [bin/generate_tfrc_credentials](./bin/generate_tfrc_credentials)
