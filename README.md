@@ -1,5 +1,19 @@
 # Terraform Beginner Bootcamp 2023
 
+## Table of Contents
+- [Semantic Versioning](#semantic-versioning-mage)
+- [Install the terraform CLI](#install-the-terraform-cli)
+- [Consideration for Linux Distribution](#consideration-for-linux-distribution)
+- [Refactoring into Bash scripts](#refactoring-into-bash-scripts)
+- [Shebang](#shebang)
+- [Execution Considerations](#execution-considerations)
+- [Linux Considerations](#linux-considerations)
+- [Github Lifecycle (before, init, Command)](#github-lifecycle-before-init-command)
+- [Working with env vars](#working-with-env-vars)
+- [Printing vars](#printing-vars)
+- [AWS CLI Installation](#aws-cli-installation)
+- [Terraform Basics](#terraform-basics)
+
 ## Semantic Versioning :mage:
 
 This project is going to utilize semantic versioning for its tagging. 
@@ -13,7 +27,7 @@ The general format:
 - **MINOR** version when you add functionality in a backward compatible manner
 - **PATCH** version when you make backward compatible bug fixes
 
-## Install the Terrafirn CLI
+## Install the Terraform CLI
 
 ### Consideration with the Terraform CLI changes
 The Terraform CLI installation instructions have chanaged due to gpg keyring changes. So the original gitpod.yml bash so we meeded refer to the latest install CLI instriction via Terraform documentation.
