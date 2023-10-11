@@ -4,12 +4,12 @@
 
 
 terraform {
-#     cloud {
-#       organization = "nebly21"
-#       workspaces {
-#         name = "Terrahouse-1"
-#       }
-#   }
+    cloud {
+      organization = "nebly21"
+      workspaces {
+        name = "terraform-cloud"
+      }
+  }
 }
 
 
