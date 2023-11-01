@@ -28,22 +28,38 @@ provider "terratowns" {
   token= var.terratowns_access_token
 }
 
-module "terrahouse_aws" {
- source = "./modules/terrahouse_aws"
+module "home_tft_hosting" {
+ source = "./modules/terrahome_aws"
  user_uuid = var.teacherseat_user_uuid
- index_html_filepath = var.index_html_filepath
- error_html_filepath = var.error_html_filepath
- content_version = var.content_version
- assets_path = var.assets_path
+ public_path = var.tft.public_path
+ content_version = var.tft.content_version
 }
 
-resource "terratowns_home" "home" {
+module "home_brownies_hosting" {
+ source = "./modules/terrahome_aws"
+ user_uuid = var.teacherseat_user_uuid
+ public_path = var.brownies.public_path
+ content_version = var.brownies.content_version
+}
+
+resource "terratowns_home" "home_TFT" {
   name = "What team compositions to play in Teamfight Tactics (set 9.5)"
   description = <<DESCRIPTION
   Teamfight Tactics (TFT) is an auto-battler game mode within the popular multiplayer online battle arena (MOBA) game League of Legends, developed by Riot Games. In TFT, players assemble teams of champions and pit them against each other in automated battles. This guide will show you the team compositions that are the strongest in set 9.5.
 DESCRIPTION
   # domain_name = "dffs2gsh.cloudfront.net"
-  domain_name = module.terrahouse_aws.cloudfront_url
+  domain_name = module.home_tft_hosting.domain_name
   town = "missingo"
-  content_version = 1
+  content_version = var.tft.content_version
+}
+
+resource "terratowns_home" "home_brownies" {
+  name = "Brownie recipe"
+  description = <<DESCRIPTION
+  How to make brownies
+DESCRIPTION
+  # domain_name = "dffs2gsh.cloudfront.net"
+  domain_name = module.home_brownies_hosting.domain_name
+  town = "missingo"
+  content_version = var.brownies.content_version
 }
