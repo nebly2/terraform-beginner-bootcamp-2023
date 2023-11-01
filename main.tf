@@ -13,12 +13,12 @@ terraform {
   #    name = "terra-house-1"
   #  }
   #}
-  #cloud {
-  #  organization = "ExamPro"
-  #  workspaces {
-  #    name = "terra-house-1"
-  #  }
-  #}
+  cloud {
+   organization = "nebly21"
+   workspaces {
+     name = "Terrahouse-1"
+   }
+  }
 
 }
 // 2ff43ed9-3759-4dd6-978b-e6de3cc3d48a
