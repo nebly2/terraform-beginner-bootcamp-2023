@@ -233,7 +233,6 @@ func resourceHouseRead(ctx context.Context, d *schema.ResourceData, m interface{
 	}
 
 	log.Print("resourceHouseRead:end")
-
 	return diags
 }
 
